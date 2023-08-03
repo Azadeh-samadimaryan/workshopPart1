@@ -2,13 +2,10 @@ package com.workshopPart1;
 
 /**
  * Hello world!
- *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+public class App {
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
 
         String[] myArray = new String[3];
 
@@ -19,8 +16,18 @@ public class App
         for (String word : myArray) {
             System.out.print(word);
         }
+
+        String s = find("Eric Svensson");
     }
+
+    public static String find(final String fullName) {
+
+        return null;
+    }
+
+
 }
+
 
 
 
