@@ -4,25 +4,46 @@ package com.workshopPart1;
  * Hello world!
  */
 public class App {
+
+    static String[] names = new String[10];
+    
     public static void main(String[] args) {
-        System.out.println("Hello World!");
 
-        String[] myArray = new String[3];
+        fillNames("Erik Svensson",names);
+        fillNames("Mehrdad Javan",names);
+        fillNames("Omid Mojabi",names);
+        fillNames("Azadeh Samadi",names);
 
-        myArray[0] = "Erik";
-        myArray[1] = " ";
-        myArray[2] = "Svensson";
-
-        for (String word : myArray) {
-            System.out.print(word);
-        }
-
-        String s = find("Eric Svensson");
+        printNames(names);
+        
     }
 
-    public static String find(final String fullName) {
+    private static void printNames(String[] repoArray)
+    {
+        for (int i=0; i< repoArray.length; i++){
 
-        return null;
+            if (repoArray[i] != null && repoArray[i] != "") {
+                System.out.println(repoArray[i]);
+            }
+
+        }
+    }
+
+    private static void fillNames(String name,String[] repository) {
+
+        if (repository == null){
+            repository = new String[10];
+        }
+        else{
+            for (int i=0; i< repository.length; i++){
+
+                if (repository[i] == null || repository[i] ==""){
+                    repository[i] = name;
+                    break;
+                }
+            }
+        }
+
     }
 
 
