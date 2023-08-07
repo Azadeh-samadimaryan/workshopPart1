@@ -6,10 +6,11 @@ package com.workshopPart1;
 public class App {
 
     static String[] names = new String[10];
-    static NameRepositoryByChatGPT repository= new NameRepositoryByChatGPT();
+    static NameRepositoryByChatGPT repository = new NameRepositoryByChatGPT();
 
     public static void main(String[] args) {
 
+        // In this part we have used our implementation
         /*fillNames("Erik Svensson", names);
         fillNames("Mehrdad Javan", names);
         fillNames("Omid Mojabi", names);
@@ -26,11 +27,30 @@ public class App {
 
         //printNames(names);
 
-       repository.add("Erik Svensson");
-       repository.add("Erik Andersson");
-       repository.add("Mehrdad Javan");
-        String[] result = repository.findByFirstName("Erik");
-        printNames(result);
+        // In this part we have used ChatGPT Implementation
+        repository.add("Erik Svensson");
+        repository.add("Erik Andersson");
+        repository.add("Mehrdad Javan");
+        repository.add("Patrik Andersson");
+        String[] result1 = repository.findByFirstName("Erik");
+        printNames(result1);
+
+        String[] result2 = repository.findByLastName("Andersson");
+        printNames(result2);
+
+        String result3 = repository.find("Patrik Andersson");
+        System.out.println(result3);
+
+        String[] result4 = repository.getAllNames();
+        printNames(result4);
+
+        boolean updateResult = repository.update("Erik Svensson",
+                "Rosa Svensson");
+        System.out.println(updateResult ? "true": "false");
+        printNames(repository.getAllNames());
+
+        boolean removeResult = repository.remove("Patrik Andersson");
+        printNames(repository.getAllNames());
 
     }
 
@@ -60,19 +80,19 @@ public class App {
 
     }
 
-    public static String find(final String fullName){
+    public static String find(final String fullName) {
         for (int i = 0; i < names.length; i++) {
-            if(names[i] == fullName){
-                return names[i] +" found successfully";
+            if (names[i] == fullName) {
+                return names[i] + " found successfully";
             }
         }
-        return fullName +" not found";
+        return fullName + " not found";
     }
 
     private static boolean add(final String fullName) {
 
         for (int i = 0; i < names.length; i++) {
-            if(names[i] == fullName){
+            if (names[i] == fullName) {
                 System.out.println(fullName + " is duplicated");
                 return false;
             }

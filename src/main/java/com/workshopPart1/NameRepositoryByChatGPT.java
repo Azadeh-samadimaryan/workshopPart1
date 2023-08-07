@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class NameRepositoryByChatGPT {
 
-    private String[] names = new String[100]; // Maximum capacity of 100 names
+    public String[] names = new String[100]; // Maximum capacity of 100 names
     private int size = 0; // Current number of names in the array
 
 
