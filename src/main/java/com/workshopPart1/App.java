@@ -6,6 +6,7 @@ package com.workshopPart1;
 public class App {
 
     static String[] names = new String[10];
+    static NameRepositoryByChatGPT repository= new NameRepositoryByChatGPT();
 
     public static void main(String[] args) {
 
@@ -14,16 +15,22 @@ public class App {
         fillNames("Omid Mojabi", names);
         fillNames("Azadeh Samadi", names);*/
 
-        add("Erik Svensson");
-        add("Mehrdad Javan");
+        //add("Erik Svensson");
+        //add("Mehrdad Javan");
         //add("Erik Svensson");
         //add("Omid Mojabi");
         //add("Azadeh Samadi");
 
-        System.out.println(find("Omid Mojabi"));
-        System.out.println(find("Erik Svensson"));
+        //System.out.println(find("Omid Mojabi"));
+        //System.out.println(find("Erik Svensson"));
 
         //printNames(names);
+
+       repository.add("Erik Svensson");
+       repository.add("Erik Andersson");
+       repository.add("Mehrdad Javan");
+        String[] result = repository.findByFirstName("Erik");
+        printNames(result);
 
     }
 
